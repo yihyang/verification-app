@@ -129,25 +129,7 @@ class VerifyDocumentActionTest extends TestCase
                     'name' => 'Test User',
                     'email' => 'test@user.com',
                 ],
-            ],
-            'issuer' => null,
-        ];
-
-        $this->assertEquals(
-            (new VerifyDocumentAction($document))->verify(),
-            'invalid_issuer'
-        );
-
-        // invalid issuer key / value pair
-        $document = [
-            'data' => [
-                'recipient' => [
-                    'name' => 'Test User',
-                    'email' => 'test@user.com',
-                ],
-            ],
-            'issuer' => [
-                'testing' => '123',
+                'issuer' => null,
             ],
         ];
 
@@ -163,9 +145,27 @@ class VerifyDocumentActionTest extends TestCase
                     'name' => 'Test User',
                     'email' => 'test@user.com',
                 ],
+                'issuer' => [
+                    'testing' => '123',
+                ],
             ],
-            'issuer' => [
-                'testing' => '123',
+        ];
+
+        $this->assertEquals(
+            (new VerifyDocumentAction($document))->verify(),
+            'invalid_issuer'
+        );
+
+        // invalid issuer key / value pair
+        $document = [
+            'data' => [
+                'recipient' => [
+                    'name' => 'Test User',
+                    'email' => 'test@user.com',
+                ],
+                'issuer' => [
+                    'testing' => '123',
+                ],
             ],
         ];
 
@@ -181,15 +181,15 @@ class VerifyDocumentActionTest extends TestCase
                     'name' => 'Test User',
                     'email' => 'test@user.com',
                 ],
-            ],
-            'issuer' => [
-                'name' => 'Accredify',
-                'identityProof' => [
-                    'type' => 'INVALID_TYPE',
-                    'key' => 'testing-key',
-                    'location' => 'ropstore.accredify.io'
+                'issuer' => [
+                    'name' => 'Accredify',
+                    'identityProof' => [
+                        'type' => 'INVALID_TYPE',
+                        'key' => 'testing-key',
+                        'location' => 'ropstore.accredify.io'
+                    ],
+                    'testing' => '123',
                 ],
-                'testing' => '123',
             ],
         ];
 
@@ -205,15 +205,15 @@ class VerifyDocumentActionTest extends TestCase
                     'name' => 'Test User',
                     'email' => 'test@user.com',
                 ],
-            ],
-            'issuer' => [
-                'name' => 'Accredify',
-                'identityProof' => [
-                    'type' => 'DNS-DID',
-                    'key' => 'testing-key',
-                    'location' => 'INVALID_VALUE'
+                'issuer' => [
+                    'name' => 'Accredify',
+                    'identityProof' => [
+                        'type' => 'DNS-DID',
+                        'key' => 'testing-key',
+                        'location' => 'INVALID_VALUE'
+                    ],
+                    'testing' => '123',
                 ],
-                'testing' => '123',
             ],
         ];
 

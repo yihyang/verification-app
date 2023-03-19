@@ -52,6 +52,7 @@ class VerifyDocumentAction
 
         /* issuer */
         $issuer = data_get($data, 'issuer');
+
         if (!$issuer) {
             return self::RESULT_INVALID_ISSUER;
         }
