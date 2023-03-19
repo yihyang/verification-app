@@ -223,6 +223,10 @@ class VerifyDocumentActionTest extends TestCase
         );
     }
 
+    /**
+     * @runInSeparateProcess
+     * @preserveGlobalState disabled
+     */
     public function test_it_should_not_return_invalid_issuer_when_valid_issuer_fields_are_provided()
     {
         // avoid HTTP Call for testing
@@ -259,6 +263,10 @@ class VerifyDocumentActionTest extends TestCase
         );
     }
 
+    /**
+     * @runInSeparateProcess
+     * @preserveGlobalState disabled
+     */
     // verify signature
     public function test_it_should_return_invalid_signature_when_no_relevent_fields_are_provided()
     {
@@ -296,6 +304,10 @@ class VerifyDocumentActionTest extends TestCase
         );
     }
 
+    /**
+     * @runInSeparateProcess
+     * @preserveGlobalState disabled
+     */
     public function test_it_should_return_invalid_signature_when_invalid_fields_are_provided()
     {
         // avoid HTTP Call for testing
@@ -336,6 +348,10 @@ class VerifyDocumentActionTest extends TestCase
         );
     }
 
+    /**
+     * @runInSeparateProcess
+     * @preserveGlobalState disabled
+     */
     public function test_it_should_not_return_invalid_signature_when_valid_fields_are_provided()
     {
         // avoid HTTP Call for testing
@@ -378,6 +394,10 @@ class VerifyDocumentActionTest extends TestCase
         );
     }
 
+    /**
+     * @runInSeparateProcess
+     * @preserveGlobalState disabled
+     */
     // verify all
     public function test_it_should_return_verified_when_all_conditions_are_met()
     {
