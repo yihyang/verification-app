@@ -13,6 +13,7 @@ class VerifyDocumentAction
     const EMAIL_REGEX = "/^([\w\+_\-]+)(\.[\w\+_\-]+)*@([\w\-]+\.)+[\w]+$/ix";
 
     // RESULTS
+    const RESULT_ERROR = 'error';
     const RESULT_VERIFIED = 'verified';
     const RESULT_INVALID_RECIPIENT = 'invalid_recipient';
     const RESULT_INVALID_ISSUER = 'invalid_issuer';

@@ -20,13 +20,13 @@ class GetDNSTxtRecordsActionTest extends TestCase
                 [
                     'Answer' => [
                         [
-                            'name' => 'ropstore.accredify.io',
+                            'name' => 'testingdomain.com',
                             'type' => 16,
                             'TTL' => 300,
                             'data' => 'openatts a=dns-did; p=did:ethr:0x05b642ff12a4ae545357d82ba4f786f3aed84214#controller; v=1.0;',
                         ],
                         [
-                            'name' => 'ropstore.accredify.io',
+                            'name' => 'testingdomain.com',
                             'type' => 16,
                             'TTL' => 300,
                             'data' => 'openatts a=dns-did; p=did:ethr:0x06a464971ea723177ef83df7b39dd63c373a6905#controller; v=1.0;;',
