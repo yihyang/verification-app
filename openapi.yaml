@@ -1,0 +1,27 @@
+openapi: 3.0.0
+info:
+  title: 'Verify Document API'
+  version: '0.1'
+paths:
+  /api/verify_document:
+    post:
+      operationId: c20f5f4d4eabb00d4a3086f2c5bddc0c
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              allOf:
+                -
+                  properties: { document: { description: Document, type: string, format: binary } }
+                  type: object
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { description: 'The response data', type: array, items: { properties: { issuer: { description: 'Issuer of the file', type: string }, result: { description: 'Result of the verification', type: string } }, type: object } }
+                type: object
+                example:
+                  data: { issuer: 'Legal Issuer', result: verified }
