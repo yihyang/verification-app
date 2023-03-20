@@ -7,12 +7,38 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# Verification App
+- This app provides an API that allows Users to upload files and verify that the files has not been tampered by 3rd party
+
 ## Assumptions
 - User can upload files even if they have not logged in
 - If they have logged in, the result will be captured
 
 ## Changes made that might not following the requirements
 - Added "error" result when invalid files are uploaded as that is the result received from https://accredify.io/verify
+
+
+## API Documentation
+
+Refer to [openapi.yaml](openapi.yaml) and open the file using [Swagger editor](https://editor.swagger.io/)
+
+## Implementation
+The goal of the implementation is to keep the controller light, and therefore a couple of Action class has been created with specific goals in mind:
+
+
+| File Name | Description |
+|---|---|
+| ConvertNestedArrayToSignatureAction | Convert Nested Array to signature |
+| FlattenArrayAction | Flatten nested array to single level array with dot notation (e.g. `{"a": {"b": "c"}}` => `{"a.b": "c"}`) |
+| GetDNSTxtRecordsAction | Get All DNS Txt Records for provided host |
+| VerifyDNSAction | Verify that provided verification key existed within DNS record of provided host |
+| VerifyDocumentAction | Provide verification result of uploaded document. This class will call the other class in order to provide the result. |
+
+
+```
+Below are the original generated documentation
+```
+-------------
 
 ## About Laravel
 
