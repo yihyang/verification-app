@@ -10,7 +10,31 @@
 # Verification App
 - This app provides an API that allows Users to upload files and verify that the files has not been tampered by 3rd party
 
-## Assumptions
+## How do I start this application?
+- Ensure you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) Installed and running on your document
+- This app is generated using sail and therefore can be started by having executing the following command:
+```
+sail up
+```
+
+## How do I execute test for this application?
+- Ensure the previous step has completed and is executing in the background, with that open another tab on your terminal and execute the following command for run the required migrations:
+```
+ sail artisan migrate --env=testing
+```
+
+- With the previous step completed, execute the following to execute the test:
+```
+sail test
+```
+
+- To run the test with code coverage, execute the following command:
+```
+sail test --coverage
+```
+
+
+## Other Assumptions
 - User can upload files even if they have not logged in
 - If they have logged in, the result will be captured
 

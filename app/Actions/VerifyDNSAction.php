@@ -18,7 +18,7 @@ class VerifyDNSAction
         $this->key = $key;
     }
 
-    public function verify()
+    public function verify() : bool
     {
         if (!$this->checkKeyIsInLocationDNSRecord($this->type, $this->key, $this->location)) {
             return false;

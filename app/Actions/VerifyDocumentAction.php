@@ -33,7 +33,7 @@ class VerifyDocumentAction
         $this->document = $document;
     }
 
-    public function verify()
+    public function verify() : string
     {
         $data = data_get($this->document, 'data');
 
@@ -70,7 +70,7 @@ class VerifyDocumentAction
         return self::RESULT_VERIFIED;
     }
 
-    private function verifyValidRecipient(array $recipient)
+    private function verifyValidRecipient(array $recipient) : bool
     {
         $name = data_get($recipient, 'name');
         $email = data_get($recipient, 'email');
